@@ -1,1 +1,682 @@
-Hello World
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The official Discord Bot Builder documentation.">
+      
+      
+        <link rel="canonical" href="https://dbb.software/docs/">
+      
+      
+        <meta name="author" content="monksharru">
+      
+      <link rel="shortcut icon" href="https://dbb.software/assets/images/dbb-logo-122x122.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>DBB Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.fe0cca5b.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#get-started" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://dbb.software/docs" title="DBB Docs" class="md-header-nav__button md-logo" aria-label="DBB Docs">
+      
+  <img src="https://dbb.software/assets/images/dbb-logo-122x122.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            DBB Docs
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Get Started
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/Discord-Bot-Builder/documentation/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Edit on GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://dbb.software/docs" title="DBB Docs" class="md-nav__button md-logo" aria-label="DBB Docs">
+      
+  <img src="https://dbb.software/assets/images/dbb-logo-122x122.png" alt="logo">
+
+    </a>
+    DBB Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Discord-Bot-Builder/documentation/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Edit on GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Get Started
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="." title="Get Started" class="md-nav__link md-nav__link--active">
+      Get Started
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-discord-bot-builder" class="md-nav__link">
+    What is Discord Bot Builder?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-dbb-discord" class="md-nav__link">
+    What is the DBB Discord?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-go" class="md-nav__link">
+    Let's go!
+  </a>
+  
+    <nav class="md-nav" aria-label="Let's go!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-beta" class="md-nav__link">
+    Get Beta
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-your-first-project" class="md-nav__link">
+    Create Your First Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-bot-account-and-set-it-up-in-dbb" class="md-nav__link">
+    Create a New Bot Account and Set it Up in DBB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-command" class="md-nav__link">
+    Create a Command
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customising-your-workspace" class="md-nav__link">
+    Customising Your Workspace
+  </a>
+  
+    <nav class="md-nav" aria-label="Customising Your Workspace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customising-the-thumbnail" class="md-nav__link">
+    Customising the Thumbnail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customising-the-title" class="md-nav__link">
+    Customising the Title
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customising-the-description" class="md-nav__link">
+    Customising the Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-blocks" class="md-nav__link">
+    Adding Blocks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-to-know" class="md-nav__link">
+    Good to know
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-turn" class="md-nav__link">
+    Your turn!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="blocks/" title="Blocks" class="md-nav__link">
+      Blocks
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-discord-bot-builder" class="md-nav__link">
+    What is Discord Bot Builder?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-dbb-discord" class="md-nav__link">
+    What is the DBB Discord?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-go" class="md-nav__link">
+    Let's go!
+  </a>
+  
+    <nav class="md-nav" aria-label="Let's go!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-beta" class="md-nav__link">
+    Get Beta
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-your-first-project" class="md-nav__link">
+    Create Your First Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-bot-account-and-set-it-up-in-dbb" class="md-nav__link">
+    Create a New Bot Account and Set it Up in DBB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-command" class="md-nav__link">
+    Create a Command
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customising-your-workspace" class="md-nav__link">
+    Customising Your Workspace
+  </a>
+  
+    <nav class="md-nav" aria-label="Customising Your Workspace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customising-the-thumbnail" class="md-nav__link">
+    Customising the Thumbnail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customising-the-title" class="md-nav__link">
+    Customising the Title
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customising-the-description" class="md-nav__link">
+    Customising the Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-blocks" class="md-nav__link">
+    Adding Blocks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-to-know" class="md-nav__link">
+    Good to know
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-turn" class="md-nav__link">
+    Your turn!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Discord-Bot-Builder/documentation/edit/master/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="get-started">Get Started<a class="headerlink" href="#get-started" title="Permanent link">🔗</a></h1>
+<p>This is the official documentation of Discord Bot Builder with the help of the community.</p>
+<hr />
+<h3 id="what-is-discord-bot-builder">What is Discord Bot Builder?<a class="headerlink" href="#what-is-discord-bot-builder" title="Permanent link">🔗</a></h3>
+<p>Discord Bot Builder is a piece of software with which you can develop your own Discord bot using a GUI. You can buy it on Steam <a href="https://store.steampowered.com/app/1119570/Discord_Bot_Builder/">here</a>.</p>
+<h3 id="what-is-the-dbb-discord">What is the DBB Discord?<a class="headerlink" href="#what-is-the-dbb-discord" title="Permanent link">🔗</a></h3>
+<p>We offer support to the community and the oppotrunity to meet new people in our <a href="https://discord.gg/PAzxTDw">Discord</a>. Join it today!</p>
+<hr />
+<h2 id="lets-go">Let's go!<a class="headerlink" href="#lets-go" title="Permanent link">🔗</a></h2>
+<h3 id="get-beta">Get Beta<a class="headerlink" href="#get-beta" title="Permanent link">🔗</a></h3>
+<p>Open Steam and go to your library. Right click on Discord Bot Builder and select Properties.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/qvwi.png" /></p>
+<p>In the new window, select the Betas tab at the top then in the dropdown menu, select the beta version. If you can't open the dropdown, make sure DBB is closed.</p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/47eh.png" /></p>
+<h3 id="create-your-first-project">Create Your First Project<a class="headerlink" href="#create-your-first-project" title="Permanent link">🔗</a></h3>
+<p>Start DBB. You will be greeted with this screen:</p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/6cyb.png" /></p>
+<p>Click on Create New Project. You should now have this screen:</p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/j0aw.png" /></p>
+<p>The Bot Folder Name is the name of your project and the name of the folder that will contain your bot. The Bot Folder Path is the directory on your computer where the new folder containing your bot will be created. For example: </p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/7b7i.png" /></p>
+<p>The bot will be saved on my desktop in the folder and with the project name 'My First Bot'.</p>
+<h3 id="create-a-new-bot-account-and-set-it-up-in-dbb">Create a New Bot Account and Set it Up in DBB<a class="headerlink" href="#create-a-new-bot-account-and-set-it-up-in-dbb" title="Permanent link">🔗</a></h3>
+<p>Go to the <a href="https://discord.com/developers">Discord Developer Portal</a>. If you've never made a bot before, you should be shown this screen:</p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/njjm.png" /></p>
+<p>Create a new application and give it a name.</p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/0k7v.png" /></p>
+<p>When you've clicked Create App, this should come up:</p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/z2u6.png" /></p>
+<p>Go to Bot on the side, and create the bot:</p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/w9rx.png" /></p>
+<p>You should now have this screen:</p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/h8mz.png" /></p>
+<p>If you want to make it so only you can invite the bot <em>(e.g. if it's a custom bot for your server)</em>, just click the slider under Public Bot:</p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/a55q.png" /></p>
+<p>Copy your bot's token. <strong>MAKE SURE TO KEEP THE TOKEN SECRET AT ALL TIMES! IF SOMEBODY GETS THE BOT TOKEN, THEY CAN ACCESS AND ABUSE YOUR BOT!</strong><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/njtf.png" /></p>
+<p>Input it into DBB. Do this by selecting the Bot menu in the toolbar at the top of the screen and selecting Set Bot Token. (you could also do the keyboard shortcut <strong>Ctrl</strong> + <strong>Alt</strong> + <strong>T</strong>.) Then paste the token and hit Enter or click OK.</p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/ahap.png" /></p>
+<p>Now you need to invite the bot to your server. Get an invite link by going to the Bot menu in the toolbar at the top of the screen and selecting Generate Invite. (you could also do the keyboard shortcut <strong>Ctrl</strong> + <strong>G</strong>.) </p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/rotv.png" /></p>
+<p>Then go to your web browser and paste the invite link there. Choose which server you want to invite the bot to and click Continue.</p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/31l6.png" /></p>
+<p>On the next page, a huge list of permissions will come up. Change them as you wish<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. Scroll down to the bottom (there will be some information about your bot) and click Authorize.</p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/fjii.png" /></p>
+<p>Finally, complete the reCAPTCHA, click Verify, and this message should display: </p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/fgcr.png" /></p>
+<p>That means you're all set and the bot's now in your server. </p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/ww5x.png" /></p>
+<h3 id="create-a-command">Create a Command<a class="headerlink" href="#create-a-command" title="Permanent link">🔗</a></h3>
+<p>To create a new command, click on the green + button next to the search bar at the top of the screen. </p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/4d54.png" /></p>
+<h4 id="customising-your-workspace">Customising Your Workspace<a class="headerlink" href="#customising-your-workspace" title="Permanent link">🔗</a></h4>
+<p>Once you have clicked on the + icon, a new workspace will be created. </p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/y4in.png" /></p>
+<p>You can customise the thumbnail, title and description.</p>
+<h5 id="customising-the-thumbnail">Customising the Thumbnail<a class="headerlink" href="#customising-the-thumbnail" title="Permanent link">🔗</a></h5>
+<p>To customise the thumbnail of a workspace, hover over the empty grey space on the top right of the screen. Click on it, paste an image URL and hit enter or click OK. Boom! You're done. </p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/8une.png" /></p>
+<p>Now your workspace looks nice and pretty.</p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/nobz.png" /></p>
+<h5 id="customising-the-title">Customising the Title<a class="headerlink" href="#customising-the-title" title="Permanent link">🔗</a></h5>
+<p>To customise the title of a workspace, click on My New Workspace and change it. Simple as. </p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/j55a.png" /></p>
+<h5 id="customising-the-description">Customising the Description<a class="headerlink" href="#customising-the-description" title="Permanent link">🔗</a></h5>
+<p>To customise the description of a workspace, click anywhere on the empty space above the 3 buttons at the bottom. Then type whatever you want. Again, simple as. </p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/utk1.png" /></p>
+<h4 id="adding-blocks">Adding Blocks<a class="headerlink" href="#adding-blocks" title="Permanent link">🔗</a></h4>
+<p>If you right-click on any empty spot in the workspace, the Blocks menu comes up. In the Events tab, there are some blocks so the bot can execute an action. In these docs, I will use the Message Sent Event block to execute an action whenever the bot receives a message (either in the server or its DMs). </p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/b9gb.png" /></p>
+<p>This is the beginning of your command. The Message Sent Event block has an Action Output and a Message Output. If you don't know what this means, DBB is also well documented: whenever you hover over anything, it tells you what it is: </p>
+<p><img alt="" src="https://heroku.is-a-bad.host/i/1duq.png" /></p>
+<details><summary>Good to know</summary><p>Server = Guild</p>
+<p>User &ne; Member</p>
+<p>A member is a user that is relevant to the guild only. You can execute actions to do with a specific server with a member.</p>
+<h4 id="good-to-know">Good to know<a class="headerlink" href="#good-to-know" title="Permanent link">🔗</a></h4>
+</details>
+<h4 id="your-turn">Your turn!<a class="headerlink" href="#your-turn" title="Permanent link">🔗</a></h4>
+<p>Use these docs and the example workspace provided to you to make your own bot!</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>We only support and document the beta version of DBB as it is the rewritten version.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>If a user somehow does get access to your bot's token, you can always hit the Regenerate button next to the Copy button. Make sure to replace the bot token in DBB after you've done this!&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>You can use <a href="https://discordapi.com/permissions.html">this website</a> to customise your bot's invite link.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+        
+          <a href="blocks/" title="Blocks" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Blocks
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Discord Bot Builder Software, Discord Bot Builder Logo made by MrGold#0001 | Discord Bot Builder Official Website made by monksharru#6969
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: [],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
